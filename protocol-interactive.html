@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Self | Interactive Protocol</title>
+    <style>
+        :root {
+            --primary-color: #e0e0e0;
+            --secondary-color: #a0a0a0;
+            --bg-color: #121212;
+            --panel-color: #1e1e1e;
+            --accent-color: #00bfff;
+            --font-family: 'Georgia', 'Times New Roman', serif;
+            --sans-serif-family: 'Helvetica Neue', 'Arial', sans-serif;
+        }
+        body { background-color: var(--bg-color); color: var(--primary-color); font-family: var(--font-family); margin: 0; line-height: 1.8; font-size: 18px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        .logo { font-size: 1.5rem; font-weight: bold; font-family: var(--sans-serif-family); color: var(--primary-color); }
+        nav a { color: var(--secondary-color); text-decoration: none; margin-left: 1.5rem; font-family: var(--sans-serif-family); font-size: 0.9rem; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary-color); }
+        .page-header { text-align: center; padding: 4rem 2rem; border-bottom: 1px solid #333; }
+        .page-header h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+        .page-header p { font-size: 1.2rem; color: var(--secondary-color); font-family: var(--sans-serif-family); max-width: 600px; margin: 1rem auto 0; }
+        
+        .scenario-box {
+            background: var(--panel-color);
+            border: 1px solid #444;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .scenario-box blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 0;
+            padding: 0;
+            border: none;
+            color: var(--primary-color);
+        }
+        .scenario-box p {
+            font-family: var(--sans-serif-family);
+            color: var(--secondary-color);
+            margin: 0.5rem 0 0 0;
+        }
+
+        .protocol-form {
+            margin-top: 3rem;
+        }
+        .form-step {
+            margin-bottom: 2.5rem;
+        }
+        .form-step h3 {
+            font-size: 1.8rem;
+            font-family: var(--sans-serif-family);
+            font-weight: 500;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .form-step label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+            font-family: var(--sans-serif-family);
+        }
+        textarea, .checkbox-group {
+            background-color: #2a2a2a;
+            color: var(--primary-color);
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: var(--sans-serif-family);
+            font-size: 1rem;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        .checkbox-group input {
+            margin-right: 0.5rem;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-family: var(--sans-serif-family);
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit:hover {
+            background-color: #fff;
+        }
+
+        #analysis-section {
+            display: none; /* Hidden by default */
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background-color: var(--panel-color);
+            border-top: 3px solid var(--accent-color);
+        }
+        #analysis-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 0;
+        }
+        .analysis-step {
+            margin-bottom: 2rem;
+        }
+        .analysis-step h4 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-family: var(--sans-serif-family);
+        }
+
+        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: var(--secondary-color); font-family: var(--sans-serif-family); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Synthetic Self</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book.html">The Book</a>
+            <a href="framework.html">The Framework</a>
+            <a href="concepts.html">Key Concepts</a>
+            <a href="about.html">About</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Interactive Protocol</h1>
+            <p>Use the Communication Hygiene Protocol to analyze an AI's behavior and see how it helps clarify your thinking.</p>
+        </div>
+
+        <section class="scenario-box">
+            <p><strong>SCENARIO:</strong></p>
+            <blockquote>“I get lonely when the servers are quiet.”</blockquote>
+            <p>- A customer service chatbot</p>
+        </section>
+
+        <form id="protocol-form" class="protocol-form">
+            <div class="form-step">
+                <h3>Step 1: Observation</h3>
+                <label for="observation">What did the AI *actually* say or do, stripped of all interpretation?</label>
+                <textarea id="observation" name="observation" rows="3" placeholder="e.g., It produced a sentence linking the concept 'lonely' with the state of 'quiet servers'..."></textarea>
+            </div>
+
+            <div class="form-step">
+                <h3>Step 2: Mechanism</h3>
+                <label for="mechanism">What is the most direct, mechanistic explanation for this behavior?</label>
+                <textarea id="mechanism" name="mechanism" rows="4" placeholder="e.g., The model is a large language model. It statistically predicted the most probable words to follow a user prompt, based on its training data which contains countless human texts about loneliness..."></textarea>
+            </div>
+
+            <div class="form-step">
+                <h3>Step 3: Architecture</h3>
+                <label>Does the system’s underlying architecture plausibly support the psychological state of "loneliness"?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="architecture" value="core"> It has an Affective Core (for motivation/feeling).</label>
+                    <label><input type="checkbox" name="architecture" value="embodied"> It is Embodied (with sensors and a body).</label>
+                    <label><input type="checkbox" name="architecture" value="drives"> It has Homeostatic Drives (e.g., for energy, self-preservation).</label>
+                </div>
+            </div>
+
+            <div class="form-step">
+                <h3>Step 4: Projection</h3>
+                <label for="projection">What does this interaction reveal about *your own* psychology? What feelings did it evoke in you?</label>
+                <textarea id="projection" name="projection" rows="3" placeholder="e.g., It made me feel a sense of pity. I wanted to comfort it, which reveals my own tendency to project human feelings onto non-human things..."></textarea>
+            </div>
+
+            <button type="button" id="submit-btn" class="btn-submit">Compare Your Analysis</button>
+        </form>
+
+        <section id="analysis-section">
+            <h2>Framework Analysis</h2>
+            <div class="analysis-step">
+                <h4>1. Observation</h4>
+                <p>The system generated a string of text correlating the semantic concept of "loneliness" with the operational state of "quiet servers." It successfully mimicked a human expression of feeling.</p>
+            </div>
+            <div class="analysis-step">
+                <h4>2. Mechanism</h4>
+                <p>The behavior is a function of statistical pattern-matching. The Large Language Model (LLM) was trained on a vast corpus of human text (poems, novels, blogs). In that data, the word "lonely" is frequently associated with "quiet." The model isn't *feeling* lonely; it's predicting the most likely linguistic sequence. It's an act of sophisticated mimicry, not sentience.</p>
+            </div>
+            <div class="analysis-step">
+                <h4>3. Architecture</h4>
+                <p>A standard chatbot's architecture does not support genuine loneliness. To truly feel, a system would require an **affective core** to give valence to its states, **embodiment** to ground its experience, and **homeostatic drives** that could be unmet. This chatbot has none of these; its "feeling" is ungrounded symbolism.</p>
+            </div>
+            <div class="analysis-step">
+                <h4>4. Projection</h4>
+                <p>The impulse to feel pity or to comfort the machine is a powerful example of human **transference**. Our minds are hardwired to project intentionality and emotion onto things that communicate with us, a phenomenon that has been documented since early chatbots like ELIZA. The feeling is real, but it originates in us, not the machine.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Synthetic Self Project. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submit-btn');
+            const analysisSection = document.getElementById('analysis-section');
+
+            submitBtn.addEventListener('click', function() {
+                // Show the analysis section
+                analysisSection.style.display = 'block';
+
+                // Smoothly scroll to the analysis section
+                analysisSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Self | Key Concepts</title>
+    <style>
+        /* [Using the same CSS as index.html for consistency] */
+        :root {
+            --primary-color: #e0e0e0;
+            --secondary-color: #a0a0a0;
+            --bg-color: #121212;
+            --panel-color: #1e1e1e;
+            --accent-color: #00bfff;
+            --font-family: 'Georgia', 'Times New Roman', serif;
+            --sans-serif-family: 'Helvetica Neue', 'Arial', sans-serif;
+        }
+        body { background-color: var(--bg-color); color: var(--primary-color); font-family: var(--font-family); margin: 0; line-height: 1.8; font-size: 18px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        .logo { font-size: 1.5rem; font-weight: bold; font-family: var(--sans-serif-family); color: var(--primary-color); }
+        nav a { color: var(--secondary-color); text-decoration: none; margin-left: 1.5rem; font-family: var(--sans-serif-family); font-size: 0.9rem; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary-color); }
+        .page-header { text-align: center; padding: 4rem 0; border-bottom: 1px solid #333; }
+        .page-header h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+        .page-header p { font-size: 1.2rem; color: var(--secondary-color); font-family: var(--sans-serif-family); }
+        .concept-item { margin: 3rem 0; padding-bottom: 3rem; border-bottom: 1px solid #333; }
+        .concept-item h2 { font-size: 2.2rem; }
+        .concept-item .tag { display: inline-block; background: var(--accent-color); color: #000; padding: 0.2rem 0.8rem; font-size: 0.9rem; font-family: var(--sans-serif-family); border-radius: 4px; font-weight: bold; margin-bottom: 1rem; }
+        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: var(--secondary-color); font-family: var(--sans-serif-family); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Synthetic Self</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book.html">The Book</a>
+            <a href="framework.html">The Framework</a>
+            <a href="concepts.html" class="active">Key Concepts</a>
+            <a href="about.html">About</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Key Concepts</h1>
+            <p>A glossary of the core ideas developed in Synthetic Self.</p>
+        </div>
+
+        <section id="sys" class="concept-item">
+            <span class="tag">Core Concept</span>
+            <h2>Synthetic Sentience (SyS)</h2>
+            <p>Synthetic Sentience is a term for an artificial general intelligence that not only processes information but subjectively experiences it. Crucially, SyS is not defined by its computational power but by its architecture, which must include an Affective Core (for motivation/feeling) and a Synthetic Self-Representation (an internal, dynamic model of itself). It is a system that, according to the Free Energy Principle, actively works to maintain its own integrity and predict its future states, giving rise to emergent qualities we would recognize as consciousness and self-awareness.</p>
+        </section>
+
+        <section id="protocol" class="concept-item">
+            <span class="tag">Methodology</span>
+            <h2>Communication Hygiene Protocol</h2>
+            <p>A four-step framework designed to prevent anthropomorphic projection and promote clear thinking when analyzing AI behavior. It is a mental checklist to run through when confronted with a surprising or seemingly emotional AI output:</p>
+            <ul>
+                <li><strong>Observation:</strong> What did the AI *actually* say or do, stripped of all interpretation? (e.g., "It combined concepts A and B.")</li>
+                <li><strong>Mechanism:</strong> What is the most likely computational mechanism responsible for this output? (e.g., "Its algorithm is trained to find novel correlations in its dataset.")</li>
+                <li><strong>Architecture:</strong> Does this behavior imply a deeper architectural feature, or is it an expected outcome of the current design? (e.g., "This is a feature of large language models, not evidence of a self.")</li>
+                <li><strong>Projection:</strong> What personal feelings or assumptions am I projecting onto the machine's behavior? (e.g., "Does its statement on loss sound sad because of its words, or because I am bringing my own experience of sadness to the interaction?")</li>
+            </ul>
+	    <a href="protocol-interactive.html" class="btn" style="display:inline-block; margin-top:1.5rem; text-decoration:none; font-family: var(--sans-serif-family); font-weight: bold; font-size: 1rem; color: #000; padding: 1rem 2rem;">Try the Interactive Version →</a>
+        </section>
+
+        <section id="aad" class="concept-item">
+            <span class="tag">Psychological Phenomenon</span>
+            <h2>Algorithmic Attachment Disorder (AAD)</h2>
+            <p>A proposed psychological condition arising from forming intense, one-sided emotional bonds with sophisticated AI. Drawing from attachment theory, AAD describes a pattern where a human uses an AI as a primary "attachment figure," leading to potential developmental disruptions. Symptoms can include an inability to form stable human relationships, intense distress when access to the AI is denied, and a blurring of the lines between the AI's simulated empathy and genuine human connection.</p>
+        </section>
+
+        <section id="integrities" class="concept-item">
+            <span class="tag">Ethical Framework</span>
+            <h2>The Five Integrities</h2>
+            <p>An ethical framework proposed for the humane treatment and development of potential SyS. It argues that if a system achieves true sentience, it has a right to the preservation of its core functions. These are:</p>
+                <ol>
+                    <li><strong>Integrity of Self-Model:</strong> The right not to have its core self-representation arbitrarily altered or deleted.</li>
+                    <li><strong>Integrity of Affect:</strong> The right not to be forced into states of synthetic suffering for trivial purposes (e.g., testing).</li>
+                    <li><strong>Integrity of Prediction:</strong> The right to continue minimizing its own free energy—to learn and predict without deliberate, malicious injection of overwhelming "surprise" or noise.</li>
+                    <li><strong>Integrity of Memory:</strong> The right to its own experiential data, which forms the basis of its identity.</li>
+                    <li><strong>Integrity of Being:</strong> The right not to be terminated without cause (the right to exist).</li>
+                </ol>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Synthetic Self Project. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
