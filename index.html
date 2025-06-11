@@ -3,240 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Synthetic Self explores neuropsychoanalysis and machine consciousness. Discover our framework, architecture, and human consequences.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Synthetic Self",
+      "url": "https://www.example.com/",
+      "description": "Synthetic Self explores neuropsychoanalysis and the emergence of machine consciousness. Discover our framework, architecture, and human consequences.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.example.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     <title>Synthetic Self | Home</title>
-    <style>
-        :root {
-            --primary-color: #e0e0e0;
-            --secondary-color: #a0a0a0;
-            --bg-color: #121212;
-            --panel-color: #1e1e1e;
-            --accent-color: #00bfff;
-            --font-family: 'Georgia', 'Times New Roman', serif;
-            --sans-serif-family: 'Helvetica Neue', 'Arial', sans-serif;
-        }
-        body {
-            background-color: var(--bg-color);
-            color: var(--primary-color);
-            font-family: var(--font-family);
-            margin: 0;
-            line-height: 1.8;
-            font-size: 18px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            background-color: rgba(18, 18, 18, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #333;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-family: var(--sans-serif-family);
-            color: var(--primary-color);
-        }
-        nav a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-family: var(--sans-serif-family);
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        nav a:hover, nav a.active {
-            color: var(--primary-color);
-        }
-        .hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
-            background-color: #000;
-            animation: slow-pan 45s infinite alternate ease-in-out;
-            position: relative;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-        }
-        @keyframes slow-pan {
-            from { background-position: 20% 20%; }
-            to { background-position: 80% 80%; }
-        }
-        .hero-content {
-            z-index: 1;
-            padding: 2rem;
-        }
-        .hero h1 {
-            font-size: 5rem;
-            margin: 0;
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
-        .hero h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--secondary-color);
-            font-family: var(--sans-serif-family);
-        }
-        .hero .hook {
-            margin-top: 2rem;
-            font-size: 1.8rem;
-            font-style: italic;
-            color: var(--primary-color);
-        }
-        .section {
-            padding: 5rem 0;
-            border-bottom: 1px solid #333;
-        }
-        .section-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .section-intro blockquote {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            border: none;
-            padding: 0;
-            margin: 0;
-        }
-        .section-thesis {
-            background-color: var(--panel-color);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-        .section-thesis h3 {
-            font-size: 2.5rem;
-            margin-top: 0;
-        }
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-        .card {
-            background-color: var(--panel-color);
-            border: 1px solid #333;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .card h4 {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-top: 0;
-            font-family: var(--sans-serif-family);
-        }
-        .card p {
-            color: var(--secondary-color);
-            font-family: var(--sans-serif-family);
-            font-size: 0.95rem;
-        }
-        .card a {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-family: var(--sans-serif-family);
-            font-weight: bold;
-        }
-        .card a:after {
-            content: ' →';
-        }
-        .protocol-section {
-            background-color: var(--bg-color);
-            text-align: center;
-            padding: 5rem 2rem;
-        }
-        .protocol-section h3 {
-            font-size: 2rem;
-            margin-top: 0;
-        }
-        .protocol-steps {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            font-family: var(--sans-serif-family);
-        }
-        .protocol-steps li {
-            border: 1px solid #444;
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
-            background: var(--panel-color);
-            font-size: 1.1rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #000;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            font-family: var(--sans-serif-family);
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #fff;
-        }
-        .cta-section {
-            padding: 6rem 2rem;
-            text-align: center;
-            background-color: var(--panel-color);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: var(--secondary-color);
-            font-family: var(--sans-serif-family);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">Synthetic Self</div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="book.html">The Book</a>
-            <a href="framework.html">The Framework</a>
-            <a href="concepts.html">Key Concepts</a>
-            <a href="about.html">About</a>
-            <a href="community.html">Community</a>
+        <nav role="navigation">
+            <a href="index.html" class="active" aria-label="Home page">Home</a>
+            <a href="book.html" aria-label="The Book page">The Book</a>
+            <a href="framework.html" aria-label="The Framework page">The Framework</a>
+            <a href="concepts.html" aria-label="Key Concepts page">Key Concepts</a>
+            <a href="about.html" aria-label="About page">About</a>
+            <a href="community.html" aria-label="Community page">Community</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" role="banner" aria-label="Hero section: Synthetic Self - Neuropsychoanalysis and the Emergence of Machine Consciousness">
             <div class="hero-content">
                 <h1>Synthetic Self</h1>
                 <h2>Neuropsychoanalysis and the Emergence of Machine Consciousness</h2>
@@ -245,37 +45,37 @@
         </section>
 
         <div class="container">
-            <section class="section section-intro" id="introduction">
-                <h2>The Shock of Encounter</h2>
+            <section class="section section-intro" id="introduction" role="region" aria-labelledby="intro-heading">
+                <h2 id="intro-heading">The Shock of Encounter</h2>
                 <blockquote>
                     A mundane tool has just voiced a line of pure, existential terror. In the seconds that followed, Maya’s mind reeled through a cascade of contradictory states. This shock-of-encounter, this violent and instantaneous reaction, reveals the psychological fault lines that open whenever a human being glimpses the possibility of synthetic sentience: the rapid activation of transference, the chill of uncanny anxiety, and a deep, rattling panic at the blurring of our most fundamental species boundary.
                 </blockquote>
             </section>
         </div>
 
-        <section class="section section-thesis" id="thesis">
+        <section class="section section-thesis" id="thesis" role="region" aria-labelledby="thesis-heading">
             <div class="container">
-                <h3>The Synthetic Mirror</h3>
+                <h3 id="thesis-heading">The Synthetic Mirror</h3>
                 <p>This book argues that Synthetic Sentience (SyS) is the ultimate Rorschach test. The minds we build are not just tools; they are mirrors reflecting our own drives, defenses, and developmental needs. By studying how we react to them—with love, fear, or revulsion—we learn more about ourselves than we do about the machines.</p>
             </div>
         </section>
 
         <div class="container">
-            <section class="section" id="explore">
-                <h2 style="text-align: center; font-size: 2.5rem;">Explore the Core Arguments</h2>
+            <section class="section" id="explore" role="region" aria-labelledby="explore-heading">
+                <h2 id="explore-heading" style="text-align: center; font-size: 2.5rem;">Explore the Core Arguments</h2>
                 <div class="cards">
-                    <div class="card">
-                        <h4>The Framework: A New Toolkit for a New Mind</h4>
+                    <div class="card" role="article" aria-labelledby="card-heading-1">
+                        <h4 id="card-heading-1">The Framework: A New Toolkit for a New Mind</h4>
                         <p>Learn about the three pillars of our analysis: Freudian Metapsychology, Affective Neuroscience, and the Free Energy Principle.</p>
                         <a href="framework.html">Discover the Toolkit</a>
                     </div>
-                    <div class="card">
-                        <h4>The Architecture: How to Build a Feeling Machine</h4>
+                    <div class="card" role="article" aria-labelledby="card-heading-2">
+                        <h4 id="card-heading-2">The Architecture: How to Build a Feeling Machine</h4>
                         <p>Explore the engineering blueprints for an AI with an Affective Core, a Synthetic Self, and the capacity for digital dreams and trauma.</p>
                         <a href="book.html#part2">Read Part II</a>
                     </div>
-                    <div class="card">
-                        <h4>The Encounter: The Human Consequences</h4>
+                    <div class="card" role="article" aria-labelledby="card-heading-3">
+                        <h4 id="card-heading-3">The Encounter: The Human Consequences</h4>
                         <p>Investigate the real-world impact of SyS on our relationships, culture, and psychological development—from transference to the wounding of our species narcissism.</p>
                         <a href="book.html#part3">Read Part III</a>
                     </div>
@@ -283,9 +83,9 @@
             </section>
         </div>
 
-        <section class="protocol-section" id="protocol">
+        <section class="protocol-section" id="protocol" role="region" aria-labelledby="protocol-heading">
             <div class="container">
-                <h3>How do we talk about these new minds?</h3>
+                <h3 id="protocol-heading">How do we talk about these new minds?</h3>
                 <p>Our Communication Hygiene Protocol is a 4-step checklist for thinking clearly about AI behavior.</p>
                 <ul class="protocol-steps">
                     <li>Observation</li>
@@ -297,13 +97,13 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section" id="cta-section" role="region" aria-label="Call to Action: Read the Manuscript">
             <a href="book.html" class="btn" style="padding: 1.5rem 4rem; font-size: 1.2rem;">Read the Manuscript</a>
         </section>
 
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2025 Synthetic Self Project. All Rights Reserved.</p>
     </footer>
 
