@@ -143,6 +143,10 @@
             <h2>Comments</h2>
             <form id="comment-form">
                 <div>
+                    <label for="username">Name:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
                     <label for="comment-text">Leave a comment:</label>
                     <textarea id="comment-text" name="comment-text" rows="4" required></textarea>
                 </div>
@@ -160,7 +164,8 @@
 
     <script>
         const commentForm = document.getElementById('comment-form');
-        const commentText = document.getElementById('comment-text');
+        const usernameInput = document.getElementById('username');
+        const commentTextInput = document.getElementById('comment-text');
         const commentsList = document.getElementById('comments-list');
 
         // Load comments from local storage
@@ -170,7 +175,11 @@
             comments.forEach(comment => {
                 const commentElement = document.createElement('div');
                 commentElement.classList.add('comment');
-                commentElement.textContent = comment;
+                // Sanitize user input before inserting with innerHTML to prevent XSS
+                const strong = document.createElement('strong');
+                strong.textContent = comment.username + ': ';
+                commentElement.appendChild(strong);
+                commentElement.appendChild(document.createTextNode(comment.text));
                 commentsList.appendChild(commentElement);
             });
         }
@@ -178,13 +187,19 @@
         // Add a new comment
         function addComment(event) {
             event.preventDefault();
-            const newComment = commentText.value.trim();
-            if (newComment) {
+            const username = usernameInput.value.trim();
+            const commentText = commentTextInput.value.trim();
+
+            if (username && commentText) {
                 const comments = JSON.parse(localStorage.getItem('comments')) || [];
-                comments.push(newComment);
+                comments.push({ username: username, text: commentText });
                 localStorage.setItem('comments', JSON.stringify(comments));
-                commentText.value = ''; // Clear the textarea
+
+                usernameInput.value = ''; // Clear the username field
+                commentTextInput.value = ''; // Clear the textarea
                 loadComments(); // Refresh the comments list
+            } else {
+                alert("Please enter both your name and a comment.");
             }
         }
 
